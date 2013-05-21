@@ -59,7 +59,7 @@ can :batch_update, Setting
 You will need to add these basic configures of `golden-setting` for your needs.
 
 * `groups` for grouping settings with a name
-# `default_group` for saving settings with a group
+* `default_group` for saving settings with a group
 * `default_tab` for a group of settings shown in tab views
 
 Edit `config/initializers/golden_setting.rb` for more detail.
