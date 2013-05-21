@@ -1,0 +1,30 @@
+<article>
+  <header>
+    <h1><%= t('.title') %></h1>
+  </header>
+
+  <%= render_list class: 'nav nav-tabs' do |li|
+    if can? :index, @setting.class
+      li << [link_to(t('helpers.index'), settings_path), { class: 'pull-right' }]
+    end
+    if can? :list, @setting.class
+      li << [link_to(t('.list'), list_settings_path), { class: 'pull-right' }]
+    end
+    if can? :show, @setting
+      li << [link_to(t('helpers.show'), setting_path(@setting)), { class: 'pull-right' }]
+    end
+  end %>
+
+  <div>
+    <%= simple_form_for @setting, as: :setting, url: setting_path(@setting) do |f| %>
+      <%= f.error_notification %>
+      <%= render 'form', f: f %>
+      <div class="form-actions">
+        <%= submit_button f %>
+      </div>
+    <% end %>
+  </div>
+
+  <footer>
+  </footer>
+</article>

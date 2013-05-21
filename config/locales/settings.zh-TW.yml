@@ -1,0 +1,52 @@
+zh-TW:
+  golden:
+    setting:
+      field_types:
+        string: '字串'
+        boolean: '布林值'
+        select: '下拉選單'
+        radio_buttons: '單選按鈕'
+        check_boxes: '多選按鈕'
+      settings:
+        edit:
+          title: '編輯設定'
+        index:
+          title: '設定管理'
+          list: '設定列表'
+        new:
+          title: '新增設定'
+        show:
+          title: '設定 - %{name}'
+        list:
+          title: '設定列表'
+          index: '設定管理'
+        batch_form:
+          submit: '儲存'
+
+  activerecord:
+    models:
+      golden/setting/base: '設定'
+    attributes:
+      golden/setting/base:
+        group: '類別'
+        name: '名稱'
+        value: '設定值'
+        resource: '專屬對象'
+        form_options: '表單格式'
+        field_type: '欄位型式'
+        field_values: '欄位值選項'
+
+  simple_form:
+    labels:
+      setting:
+    hints:
+      setting:
+        field_values: '請以 Ruby 語法定義一個欄位值陣列。'
+    placeholders:
+      setting:
+
+  helpers:
+    submit:
+      setting:
+        create: '建立%{model}'
+        update: '確認'

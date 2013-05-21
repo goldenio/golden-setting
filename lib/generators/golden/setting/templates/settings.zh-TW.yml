@@ -1,0 +1,15 @@
+zh-TW:
+  golden:
+    setting:
+      groups:
+        site: '網站'
+      names:
+        site_title: '名稱'
+
+# simple_form:
+#   labels:
+#     setting:
+#   hints:
+#     setting:
+#   placeholders:
+#     setting:

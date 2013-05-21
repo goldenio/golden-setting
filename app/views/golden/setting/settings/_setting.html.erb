@@ -1,0 +1,18 @@
+<section>
+  <p>
+    <b><%= setting.class.human_attribute_name :group %>:</b>
+    <%= t(setting.group, scope: 'settings.groups') %>
+  </p>
+  <p>
+    <b><%= setting.class.human_attribute_name :name %>:</b>
+    <%= setting.name %>
+  </p>
+  <p>
+    <b><%= setting.class.human_attribute_name :value %>:</b>
+    <%= setting.value %>
+  </p>
+  <p>
+    <b><%= setting.class.human_attribute_name :form_options %>:</b>
+    <%= setting.form_options %>
+  </p>
+</section>

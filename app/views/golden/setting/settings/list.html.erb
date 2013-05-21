@@ -1,0 +1,19 @@
+<article>
+  <header>
+    <h1><%= t('.title') %></h1>
+  </header>
+
+  <%= render_list class: 'nav nav-tabs' do |li|
+    if can? :index, @setting_class
+      li << [link_to(t('.index'), settings_path), { class: 'pull-right' }]
+    end
+  end %>
+
+  <div>
+    <%= render 'table', settings: @settings, setting_class: @setting_class %>
+    <%= render 'application/pagination', collection: @settings %>
+  </div>
+
+  <footer>
+  </footer>
+</article>

@@ -1,0 +1,18 @@
+Description:
+    It will generate model and migration for use.
+
+Example:
+    rails generate golden:setting:install setting
+
+    This will create/modify:
+        db/migrate/20130516050309_create_golden_settings.rb
+        app/models/setting.rb
+        app/assets/javascripts/application.js
+        app/assets/stylesheets/application.css
+        config/initializers/golden_setting.rb
+        config/application.rb
+        config/locales/golden/settings.en.yml
+        config/locales/golden/settings.zh-TW.yml
+        config/routes.rb
+        app/controllers/application_controller.rb
+        app/views/layouts/application.html.erb

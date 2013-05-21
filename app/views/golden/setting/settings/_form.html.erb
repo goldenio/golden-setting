@@ -1,0 +1,25 @@
+<div class="form-inputs">
+  <%= f.input :field_type,
+    as: :select,
+    collection: setting_field_types,
+    include_blank: false,
+    required: true %>
+  <%= f.input :field_values,
+    as: :text,
+    required: true,
+    wrapper_html: {
+      class: setting_selectable?(f.object.field_type) ? '' : 'hide'
+    } %>
+  <%= f.input :group,
+    as: :select,
+    collection: setting_groups,
+    include_blank: false %>
+  <%= f.input :name %>
+  <%= f.input :value,
+    as: f.object.field_type,
+    collection: setting_field_values(f.object.field_values),
+    include_blank: false,
+    input_html: {
+      value: f.object.value
+    } %>
+</div>

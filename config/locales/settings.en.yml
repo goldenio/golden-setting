@@ -1,0 +1,52 @@
+en:
+  golden:
+    setting:
+      field_types:
+        string: 'String'
+        boolean: 'Boolean'
+        select: 'Select'
+        radio_buttons: 'Radio Buttons'
+        check_boxes: 'Check Boxes'
+      settings:
+        edit:
+          title: 'Editing setting'
+        index:
+          title: 'Settings'
+          list: 'List'
+        new:
+          title: 'New setting'
+        show:
+          title: 'Setting - %{name}'
+        list:
+          title: 'Listing settings'
+          index: 'Settings'
+        batch_form:
+          submit: 'Save'
+
+  activerecord:
+    models:
+      golden/setting/base: 'Setting'
+    attributes:
+      golden/setting/base:
+        group: 'Group'
+        name: 'Name'
+        value: 'Value'
+        resource: 'Resource belonged'
+        form_options: 'Form options'
+        field_type: 'Field type'
+        field_values: 'Field values'
+
+  simple_form:
+    labels:
+      setting:
+    hints:
+      setting:
+        field_values: 'Please define an array of values in Ruby.'
+    placeholders:
+      setting:
+
+  helpers:
+    submit:
+      setting:
+        create: 'Create %{model}'
+        update: 'Update %{model}'

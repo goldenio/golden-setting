@@ -1,0 +1,15 @@
+en:
+  golden:
+    setting:
+      groups:
+        site: 'Site'
+      names:
+        site_title: 'Site Title'
+
+# simple_form:
+#   labels:
+#     setting:
+#   hints:
+#     setting:
+#   placeholders:
+#     setting:
