@@ -14,7 +14,7 @@ class Golden::Setting::InstallGenerator < Rails::Generators::NamedBase
 
   def generate_migration
     file = 'create_golden_settings.rb'
-    #migration_template file, File.join('db/migrate', class_path, file)
+    migration_template file, File.join('db/migrate', class_path, file)
   end
 
   def generate_model
