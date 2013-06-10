@@ -1,6 +1,6 @@
 class Golden::Setting::SettingsController < ApplicationController
   before_filter :authenticate_session!
-  before_filter :load_setting_class, only: [:index, :create, :list]
+  before_filter :load_setting_class, only: [:index, :create, :list, :batch_update]
   before_filter :new_setting, only: [:create]
   load_and_authorize_resource :setting, class: Golden::Setting.setting_class, parent: false
 
