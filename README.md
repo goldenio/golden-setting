@@ -49,7 +49,7 @@ $ rake db:migrate
 
 Remember add setting abilities for `cancan`.
 
-```
+```ruby
 can :index, Setting
 can :batch_update, Setting
 ```

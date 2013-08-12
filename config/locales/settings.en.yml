@@ -15,6 +15,7 @@ en:
           list: 'List'
         new:
           title: 'New setting'
+          list: 'List'
         show:
           title: 'Setting - %{name}'
         list:

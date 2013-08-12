@@ -15,6 +15,7 @@ zh-TW:
           list: '設定列表'
         new:
           title: '新增設定'
+          list: '設定列表'
         show:
           title: '設定 - %{name}'
         list:
