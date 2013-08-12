@@ -3,7 +3,6 @@ module Golden
     module Name
       extend ActiveSupport::Concern
       included do
-        attr_accessible :name
         validates :name, presence: true
       end
 

@@ -9,7 +9,6 @@ module Golden
           collection: []
         }
         serialize :form_options
-        attr_accessible :field_type, :field_values
       end
 
       module ClassMethods

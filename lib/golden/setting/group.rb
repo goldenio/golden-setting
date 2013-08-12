@@ -3,7 +3,6 @@ module Golden
     module Group
       extend ActiveSupport::Concern
       included do
-        attr_accessible :group
         # validates :group, presence: true
       end
 
