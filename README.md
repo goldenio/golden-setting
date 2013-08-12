@@ -9,14 +9,21 @@ A web interface is provied to let users can update easily.
 For Rails 4 project, `Gemfile` should have
 
 ```ruby
-gem 'protected_attributes'
-gem 'devise', '~> 3.0.0.rc'
+gem 'devise', '> 3.0'
 gem 'cancan'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
 gem 'will_paginate'
 gem 'rails-theme-helper'
 ```
+
+If you add `gem 'protected_attributes'` in your `Gemfile`, remember to add
+
+```ruby
+attr_accessible :name, :field_type, :field_values, :group
+```
+
+to your `Setting` class.
 
 For Rails 3 project, `Gemfile` should have
 
