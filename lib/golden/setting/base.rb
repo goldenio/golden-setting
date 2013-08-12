@@ -19,7 +19,7 @@ module Golden
           without_resource.where(name: name)
         end
 
-        def select_object fields = %w{name value}
+        def select_object fields = %w{name value form_options}
           without_resource.select(fields)
         end
 
@@ -39,8 +39,8 @@ module Golden
         end
       end
 
-      # def initialize attributes = nil, options = {}
-      #   super attributes, options
+      # def initialize attributes = nil
+      #   super attributes
       # end
     end
   end

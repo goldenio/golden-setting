@@ -9,6 +9,7 @@ module Golden
           collection: []
         }
         serialize :form_options
+        after_initialize :form_options
       end
 
       module ClassMethods
@@ -23,11 +24,6 @@ module Golden
             self[name].present?
           end
         end
-      end
-
-      def initialize attributes = nil, options = {}
-        super attributes, options
-        self.form_options
       end
 
       def form_options

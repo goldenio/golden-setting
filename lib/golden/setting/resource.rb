@@ -35,7 +35,7 @@ module Golden
           named(name, resource).first_or_initialize
         end
 
-        def select_object fields = %w{name value}, resource = @resource
+        def select_object fields = %w{name value form_options}, resource = @resource
           with_resource(resource).select(fields)
         end
       end
