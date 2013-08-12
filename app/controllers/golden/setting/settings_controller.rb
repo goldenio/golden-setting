@@ -30,7 +30,7 @@ class Golden::Setting::SettingsController < ApplicationController
   def update
     value = params[:setting].delete :value
     @setting.value = value
-    @setting.update_attributes params[:setting]
+    @setting.update_attributes setting_params
     respond_with @setting, location: setting_path(@setting)
   end
 
@@ -61,5 +61,14 @@ class Golden::Setting::SettingsController < ApplicationController
     value = params[:setting].delete :value
     @setting = @setting_class.new params[:setting]
     @setting.value = value
+  end
+
+  def setting_params
+    if params.respond_to? :permit
+      fields = [:field_type, :field_values, :group, :name, :value]
+      params.require(:setting).permit(fields)
+    else
+      params[:setting]
+    end
   end
 end
