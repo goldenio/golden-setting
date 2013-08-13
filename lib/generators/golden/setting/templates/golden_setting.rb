@@ -33,4 +33,7 @@ Golden::Setting.configure do |config|
   # Define default tab with name of groups.
   # Default is ''.
   config.default_tab = 'site'
+
+  # Add more allowed fields for strong paramters.
+  #config.permitted_fields += []
 end

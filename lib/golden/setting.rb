@@ -35,6 +35,11 @@ module Golden
     mattr_accessor :default_tab
     @@default_tab = ''
 
+    mattr_accessor :permitted_fields
+    @@permitted_fields = [
+      :field_type, :field_values, :group, :name, :value
+    ]
+
     def self.configure
       yield self
     end

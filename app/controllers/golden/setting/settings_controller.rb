@@ -59,14 +59,13 @@ class Golden::Setting::SettingsController < ApplicationController
 
   def new_setting
     value = params[:setting].delete :value
-    @setting = @setting_class.new params[:setting]
+    @setting = @setting_class.new setting_params
     @setting.value = value
   end
 
   def setting_params
     if params.respond_to? :permit
-      fields = [:field_type, :field_values, :group, :name, :value]
-      params.require(:setting).permit(fields)
+      params.require(:setting).permit(Golden::Setting.permitted_fields)
     else
       params[:setting]
     end
