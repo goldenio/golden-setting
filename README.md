@@ -9,10 +9,10 @@ A web interface is provied to let users can update easily.
 For Rails 4 project, `Gemfile` should have
 
 ```ruby
-gem 'devise', '> 3.0'
-gem 'cancan'
-gem 'simple_form', '~> 3.0.0.rc'
-gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
+gem 'devise', '~> 3.0'
+gem 'cancancan'
+gem 'simple_form', '~> 3.0'
+gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'rails-theme-helper'
 ```
@@ -29,9 +29,9 @@ For Rails 3 project, `Gemfile` should have
 
 ```ruby
 gem 'devise', '>= 2.0', '< 3.0'
-gem 'cancan'
+gem 'cancancan'
 gem 'simple_form', '>= 2.0', '< 3.0'
-gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
+gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'rails-theme-helper'
 ```
@@ -54,7 +54,7 @@ $ rails generate golden:setting:install setting
 $ rake db:migrate
 ```
 
-Remember add setting abilities for `cancan`.
+Remember add setting abilities for `cancancan`.
 
 ```ruby
 can :index, Setting
