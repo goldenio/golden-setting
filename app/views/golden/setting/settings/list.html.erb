@@ -3,15 +3,20 @@
     <h1><%= t('.title') %></h1>
   </header>
 
-  <%= render_list class: 'nav nav-tabs' do |li|
-    if can? :index, @setting_class
-      li << [link_to(t('.index'), settings_path), { class: 'pull-right' }]
-    end
-  end %>
+  <div class="tabbable">
+    <%= render_list class: 'nav nav-tabs' do |li|
+      if can? :new, @setting_class
+        li << [link_to(t('helpers.new'), new_setting_path), { class: 'pull-right' }]
+      end
+      if can? :index, @setting_class
+        li << [link_to(t('.index'), settings_path), { class: 'pull-right' }]
+      end
+    end %>
 
-  <div>
-    <%= render 'table', settings: @settings, setting_class: @setting_class %>
-    <%= render 'application/pagination', collection: @settings %>
+    <div>
+      <%= render 'table', settings: @settings, setting_class: @setting_class %>
+      <%= render 'application/pagination', collection: @settings %>
+    </div>
   </div>
 
   <footer>

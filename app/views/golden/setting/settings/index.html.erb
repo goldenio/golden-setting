@@ -3,29 +3,31 @@
     <h1><%= t('.title') %></h1>
   </header>
 
-  <%= render_list class: 'nav nav-tabs' do |li|
-    if can? :new, @setting_class
-      li << [link_to(t('helpers.new'), new_setting_path), { class: 'pull-right' }]
-    end
-    if can? :list, @setting_class
-      li << [link_to(t('.list'), list_settings_path), { class: 'pull-right' }]
-    end
-    Golden::Setting.groups.each do |key, value|
-      next if skip_setting_group? key
-      li << settings_nav_tab(key, @default_tab)
-    end
-  end %>
+  <div class="tabbable">
+    <%= render_list class: 'nav nav-tabs' do |li|
+      if can? :new, @setting_class
+        li << [link_to(t('helpers.new'), new_setting_path), { class: 'pull-right' }]
+      end
+      if can? :list, @setting_class
+        li << [link_to(t('.list'), list_settings_path), { class: 'pull-right' }]
+      end
+      Golden::Setting.groups.each do |key, value|
+        next if skip_setting_group? key
+        li << settings_nav_tab(key, @default_tab)
+      end
+    end %>
 
-  <div class="tab-content">
-    <% Golden::Setting.groups.each do |key, value| %>
-      <% next if skip_setting_group? key %>
-      <%= settings_tab_pane key, @default_tab do %>
-        <%= render 'batch_form',
-          settings: @setting_class.without_resource.grouped(key),
-          setting_class: @setting_class
-        %>
+    <div class="tab-content">
+      <% Golden::Setting.groups.each do |key, value| %>
+        <% next if skip_setting_group? key %>
+        <%= settings_tab_pane key, @default_tab do %>
+          <%= render 'batch_form',
+            settings: @setting_class.without_resource.grouped(key),
+            setting_class: @setting_class
+          %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 
   <footer>

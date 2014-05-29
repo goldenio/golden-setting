@@ -10,14 +10,19 @@ zh-TW:
       settings:
         edit:
           title: '編輯設定'
+          index: '設定管理'
+          list: '設定列表'
         index:
           title: '設定管理'
           list: '設定列表'
         new:
           title: '新增設定'
+          index: '設定管理'
           list: '設定列表'
         show:
           title: '設定 - %{name}'
+          index: '設定管理'
+          list: '設定列表'
         list:
           title: '設定列表'
           index: '設定管理'

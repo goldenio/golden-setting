@@ -10,14 +10,19 @@ en:
       settings:
         edit:
           title: 'Editing setting'
+          index: 'Settings'
+          list: 'List'
         index:
           title: 'Settings'
           list: 'List'
         new:
           title: 'New setting'
+          index: 'Settings'
           list: 'List'
         show:
           title: 'Setting - %{name}'
+          index: 'Settings'
+          list: 'List'
         list:
           title: 'Listing settings'
           index: 'Settings'

@@ -1,24 +1,21 @@
 <%= simple_form_for setting_class,
   as: :setting,
   url: batch_update_settings_path,
-  method: :put,
-  html: { class: 'form-horizontal' } do |f| %>
+  method: :put do |f| %>
 
   <%= f.error_notification %>
 
   <% settings.each do |setting| %>
     <% next if skip_setting? setting.name %>
-    <div class="form-inputs">
-      <%= f.input setting.name,
-        as: setting.field_type,
-        collection: setting_field_values(setting.field_values),
-        label: setting_name(setting.name),
-        include_blank: false,
-        input_html: { value: setting.value } %>
-    </div>
+    <%= f.input setting.name,
+      as: setting.field_type,
+      collection: setting_field_values(setting.field_values),
+      label: setting_name(setting.name),
+      include_blank: false,
+      input_html: { value: setting.value } %>
   <% end %>
 
   <div class="form-actions">
-    <%= submit_button f, t('.submit') %>
+    <%= f.button :submit, t('.submit'), name: nil %>
   </div>
 <% end %>
