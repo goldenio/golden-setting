@@ -100,14 +100,6 @@ class Golden::Setting::InstallGenerator < Rails::Generators::NamedBase
     route "mount Golden::Setting::Engine, at: '/'\n"
   end
 
-  def inject_controller
-    file = 'app/controllers/application_controller.rb'
-    sentinel = "protect_from_forgery with: :exception\n"
-    insert_into_file file, after: sentinel do
-      "  alias_method :authenticate_session!, :authenticate_user!\n"
-    end
-  end
-
   def inject_layout
     file = 'app/views/layouts/application.html.erb'
     sentinel = "<%= yield %>\n"

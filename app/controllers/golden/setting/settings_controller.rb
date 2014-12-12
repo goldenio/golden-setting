@@ -1,5 +1,10 @@
 class Golden::Setting::SettingsController < ApplicationController
-  before_filter :authenticate_session!
+  if Golden::Setting.before_actions.blank?
+    raise "Please set config.before_actions like `authenticate_user!` for security."
+  end
+  Golden::Setting.before_actions.each do |action|
+    before_filter action.to_sym
+  end
   before_filter :load_setting_class, only: [:index, :create, :list, :batch_update]
   before_filter :new_setting, only: [:create]
   load_and_authorize_resource :setting, class: Golden::Setting.setting_class, parent: false
@@ -47,7 +52,7 @@ class Golden::Setting::SettingsController < ApplicationController
   def batch_update
     params[:setting].each do |setting, value|
       @setting_class.send "#{setting}=", value
-    end
+    end if params[:setting]
     redirect_to action: :index
   end
 

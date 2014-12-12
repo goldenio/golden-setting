@@ -40,6 +40,9 @@ module Golden
       :field_type, :field_values, :group, :name, :value
     ]
 
+    mattr_accessor :before_actions
+    @@before_actions = []
+
     def self.configure
       yield self
     end

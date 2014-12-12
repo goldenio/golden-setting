@@ -68,6 +68,7 @@ You will need to add these basic configures of `golden-setting` for your needs.
 * `groups` for grouping settings with a name
 * `default_group` for saving settings with a group
 * `default_tab` for a group of settings shown in tab views
+* `before_actions` for setting up authentication filters
 
 Edit `config/initializers/golden_setting.rb` for more detail.
 

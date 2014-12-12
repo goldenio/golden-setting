@@ -36,4 +36,9 @@ Golden::Setting.configure do |config|
 
   # Add more allowed fields for strong paramters.
   #config.permitted_fields += []
+
+  # Define before_actions.
+  config.before_actions += [
+    'authenticate_user!'
+  ]
 end
