@@ -14,7 +14,7 @@ gem 'cancancan'
 gem 'simple_form', '~> 3.0'
 gem 'bootstrap-sass'
 gem 'will_paginate'
-gem 'rails-theme-helper'
+gem 'golden-theme'
 ```
 
 If you add `gem 'protected_attributes'` in your `Gemfile`, remember to add
@@ -33,7 +33,7 @@ gem 'cancancan'
 gem 'simple_form', '>= 2.0', '< 3.0'
 gem 'bootstrap-sass'
 gem 'will_paginate'
-gem 'rails-theme-helper'
+gem 'golden-theme'
 ```
 
 Please make sure these gems are installed and configured properly.
@@ -138,7 +138,7 @@ You can add virtaul settings for your application by setting defaults.
 Add `config/initializers/golden_setting_defaults.rb`.
 
 ```ruby
-YourApp::Application.config.after_initialize do
+Rails.application.config.after_initialize do
   Setting.defaults[:administrator] = 'tsechingho'
 end
 ```
@@ -153,7 +153,7 @@ Setting.administrator    # => 'tsechingho'
 You can also save default settings in database after initializing your application.
 
 ```ruby
-YourApp::Application.config.after_initialize do
+Rails.application.config.after_initialize do
   Setting.save_default :manager, 'tsechingho'
 end
 ```
@@ -165,6 +165,8 @@ Setting.named('manager').count    # => 1
 Setting.object('manager').group    # => 'site'
 Setting.manager    # => 'tsechingho'
 ```
+
+For Rails 3 project, use `YourApp::Application.config.after_initialize` instead.
 
 ### Resourced settings
 
