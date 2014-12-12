@@ -24,8 +24,9 @@ class Golden::Setting::InstallGenerator < Rails::Generators::NamedBase
     template file, File.join('app/models', class_path, "#{file_name}.rb"), verbose: false
   end
 
-  def inject_javascript
+  def inject_javascript_js
     file = 'app/assets/javascripts/application.js'
+    return unless File.exists? file
     log :javascripts, 'application.js'
     sentinel = "//= require_tree .\n"
     insert_into_file file, before: sentinel, verbose: false do
@@ -33,12 +34,43 @@ class Golden::Setting::InstallGenerator < Rails::Generators::NamedBase
     end
   end
 
-  def inject_stylesheet
+  def inject_javascript_coffee
+    file = 'app/assets/javascripts/application.js.coffee'
+    return unless File.exists? file
+    log :javascripts, 'application.js.coffee'
+    sentinel = "#= require_tree .\n"
+    insert_into_file file, before: sentinel, verbose: false do
+      "#= require golden/setting/settings\n"
+    end
+  end
+
+  def inject_stylesheet_css
     file = 'app/assets/stylesheets/application.css'
+    return unless File.exists? file
     log :stylesheets, 'application.css'
     sentinel = " *= require_self\n"
     insert_into_file file, before: sentinel, verbose: false do
       " *= require golden/setting/settings\n"
+    end
+  end
+
+  def inject_stylesheet_sass
+    file = 'app/assets/stylesheets/application.css.sass'
+    return unless File.exists? file
+    log :stylesheets, 'application.css.sass'
+    sentinel = "//= require_self\n"
+    insert_into_file file, before: sentinel, verbose: false do
+      "//= require golden/setting/settings\n"
+    end
+  end
+
+  def inject_stylesheet_scss
+    file = 'app/assets/stylesheets/application.css.scss'
+    return unless File.exists? file
+    log :stylesheets, 'application.css.scss'
+    sentinel = "//= require_self\n"
+    insert_into_file file, before: sentinel, verbose: false do
+      "//= require golden/setting/settings\n"
     end
   end
 

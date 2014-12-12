@@ -7,8 +7,8 @@ Example:
     This will create/modify:
         db/migrate/20130516050309_create_golden_settings.rb
         app/models/setting.rb
-        app/assets/javascripts/application.js
-        app/assets/stylesheets/application.css
+        app/assets/javascripts/application.js(.coffee)
+        app/assets/stylesheets/application.css(.sass|.scss)
         config/initializers/golden_setting.rb
         config/application.rb
         config/locales/golden/settings.en.yml
