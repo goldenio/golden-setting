@@ -2,7 +2,7 @@ module Golden
   module Setting
     module Resourced
       extend ActiveSupport::Concern
-      include do
+      included do
       end
 
       module ClassMethods
