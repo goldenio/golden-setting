@@ -23,6 +23,14 @@ module Golden
           without_resource.select(fields)
         end
 
+        # For SimpleForm#find_attribute_column
+        def has_attribute? name
+          named(name).exists?
+        end
+
+        # For SimpleForm#find_attribute_column
+        # def type_for_attribute name; end
+
         def method_missing method, *args
           super method, *args
         rescue NoMethodError
